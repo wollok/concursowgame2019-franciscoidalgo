@@ -1,0 +1,9 @@
+import wollok.game.*
+
+import juego.*
+
+program juego123 {
+
+	juego.cargarNivel()
+	game.start()
+}
