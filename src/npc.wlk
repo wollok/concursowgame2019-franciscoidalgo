@@ -10,6 +10,7 @@ class Npc{
 	var property pokemonTeam = []
 	var property direccion = izquierda
 	var property ocupado = false
+	var cumplioProposito = false
 	method esAtravesable() = false
 	method mirarPj (){
 		direccion = pj.direccion().opuesta()
@@ -56,7 +57,10 @@ object raul inherits Npc{
 			perdio = true
 		}else{
 			self.hablar("Bien jugado...")
-			pj.agregarPokemon(new Torkoal(owner=pj))
+			if(!cumplioProposito){
+				pj.agregarPokemon(new Torkoal(owner=pj))
+				cumplioProposito = true
+				}
 			game.schedule(2000,{pj.ocupado(false)})
 		}
 	}
@@ -68,9 +72,12 @@ object profJorge inherits Npc{
 	method interactuar (){
 		pj.ocupado(true)
 		self.hablar("Toma tu primer pokemon team")
-		pj.agregarPokemon(new Nidoking(owner=pj))
-		pj.agregarPokemon(new Torkoal(owner=pj))
-		pj.agregarPokemon(new Feraligatr(owner=pj))
+		if(!cumplioProposito){
+			pj.agregarPokemon(new Nidoking(owner=pj))
+			pj.agregarPokemon(new Torkoal(owner=pj))
+			pj.agregarPokemon(new Feraligatr(owner=pj))
+			cumplioProposito = true
+		}
 		game.schedule(2000,{pj.ocupado(false)})
 	}
 }
@@ -97,7 +104,10 @@ object norberto inherits Npc{
 			self.hablar("Demonios...")
 			game.schedule(2000,{pj.ocupado(false)})
 			self.hablar("Adelante quedate mi pokemon, te lo ganaste")
-			pj.agregarPokemon(new Mawile(owner=pj))
+			if (!cumplioProposito){
+				pj.agregarPokemon(new Mawile(owner=pj))
+				cumplioProposito = true
+				}
 			game.schedule(2000,{pj.ocupado(false)})
 		}
 	}
@@ -172,8 +182,11 @@ object segundaForTheWin inherits Npc{
 			self.PokemonTeam()
 			game.schedule(2000,{batalla.iniciar(self)})
 		}else{
-			self.hablar("no vivo de la nostalgia...")
-			pj.agregarPokemon(new Houndoom(owner=pj))
+			self.hablar("No vivo de la nostalgia...")
+			if(!cumplioProposito){
+				pj.agregarPokemon(new Houndoom(owner=pj))
+				cumplioProposito = true
+				}
 			game.schedule(2000,{pj.ocupado(false)})
 		}
 	}
@@ -197,7 +210,10 @@ object dragonDude inherits Npc{
 			game.schedule(2000,{batalla.iniciar(self)})
 		}else{
 			self.hablar("poder dragon...")
-			pj.agregarPokemon(new Dragonite(owner=pj))
+			if(!cumplioProposito){
+				pj.agregarPokemon(new Dragonite(owner=pj))
+				cumplioProposito = true
+				}
 			game.schedule(2000,{pj.ocupado(false)})
 		}
 	}
