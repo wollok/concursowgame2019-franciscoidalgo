@@ -1,11 +1,11 @@
 # Pokemon: Wollok Version
 
-## Participantes:
+## Participantes
 Idalgo, Francisco (UTN FRBA)
 Puk, Ignacio (UTN FRBA)
 Villar, Nicolás (UTN FRBA)
 
-## Reglas de Juego:
+## Reglas de Juego
 
 El juego funciona de manera similar a los juegos de Pokemon, con varias simplificaciones. Al
 iniciar el juego, nos encontramos con nuestro entrenador, al que movemos con las flechas
@@ -42,7 +42,7 @@ a curar a nuestros Pokemon para volver a jugar una revancha.
 pueden darnos un premio al volver a interactuar con ellos luego de vencerlos, por lo
 que recomiendo hacerlo.
 
-## Imágenes:
+## Imágenes
 ### Tipos y su eficiencia
 ![Imagen con los tipos](https://img.rankedboost.com/wp-content/uploads/2019/05/Pokemon-Sword-Shield-Type-Weakness.jpg)
 
